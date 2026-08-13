@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikash Sharma Production | Wedding Photography &amp; Cinematography | Gopalganj &amp; Siwan</title>
+<meta name="description" content="Vikash Sharma Production offers professional wedding photography, cinematic videography, 4K video, drone coverage and wedding albums in Gopalganj, Siwan and nearby areas of Bihar.">
+<meta name="theme-color" content="#0a0908">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Cinzel:wght@500;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CONFIGURATION — DESIGN TOKENS
+   ============================================================ */
+:root{
+  --ink:#080706;
+  --charcoal:#121009;
+  --panel:#181510;
+  --panel-2:#1e1a13;
+  --hairline:rgba(201,164,92,0.18);
+  --gold:#c9a45c;
+  --gold-bright:#e9c988;
+  --gold-dim:#8a6f3d;
+  --paper:#f3ede0;
+  --paper-dim:#c9c0ac;
+  --muted:#8d8576;
+  --serif:'Cormorant Garamond', serif;
+  --display:'Cinzel', serif;
+  --sans:'Jost', sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --bounce:cubic-bezier(.34,1.56,.64,1);
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:var(--sans);
+  font-weight:300;
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; display:block;}
+a{color:inherit; text-decoration:none;}
+button{font-family:inherit; cursor:pointer;}
+::selection{background:var(--gold); color:var(--ink);}
+:focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px;}
+
+.container{max-width:1180px; margin:0 auto; padding:0 24px;}
+.eyebrow{
+  font-family:var(--display); font-size:11px; letter-spacing:.32em;
+  text-transform:uppercase; color:var(--gold); display:inline-block; margin-bottom:14px;
+}
+.h2{
+  font-family:var(--serif); font-weight:600; font-size:clamp(30px,4.4vw,52px);
+  color:var(--paper); line-height:1.08; letter-spacing:.01em;
+}
+.lede{font-family:var(--serif); font-size:19px; color:var(--paper-dim); font-weight:400; max-width:640px;}
+.section{padding:100px 0;}
+.section-head{margin-bottom:56px;}
+.section-head.center{text-align:center; margin-left:auto; margin-right:auto;}
+.section-head.center .lede{margin-left:auto; margin-right:auto;}
+
+/* divider — the film-strip motif (signature element) */
+.reel-divider{
+  display:flex; align-items:center; gap:10px; margin:0 auto 0; width:100%;
+  opacity:.55;
+}
+.reel-divider .line{flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--hairline),transparent);}
+.reel-divider .holes{display:flex; gap:7px;}
+.reel-divider .holes span{width:4px; height:6px; border-radius:1px; background:var(--gold-dim);}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:16px 34px; font-family:var(--display); font-size:11.5px; letter-spacing:.2em;
+  text-transform:uppercase; border-radius:2px; border:1px solid transparent;
+  transition:transform .5s var(--bounce), background .35s var(--ease), border-color .35s var(--ease), color .35s var(--ease), box-shadow .35s var(--ease);
+  white-space:nowrap;
+}
+.btn-gold{background:var(--gold); color:var(--ink); border-color:var(--gold);}
+.btn-gold:hover{background:var(--gold-bright); border-color:var(--gold-bright); transform:translateY(-4px) scale(1.06); box-shadow:0 14px 30px -10px rgba(201,164,92,.55);}
+.btn-gold:active{transform:translateY(-1px) scale(.95); transition-duration:.15s;}
+.btn-ghost{background:transparent; color:var(--paper); border-color:rgba(243,237,224,.35);}
+.btn-ghost:hover{border-color:var(--gold); color:var(--gold-bright); transform:translateY(-4px) scale(1.06);}
+.btn-ghost:active{transform:translateY(-1px) scale(.95); transition-duration:.15s;}
+.btn-sm{padding:12px 22px; font-size:10.5px;}
+.btn-row{display:flex; gap:16px; flex-wrap:wrap;}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+header{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(8,7,6,0);
+  border-bottom:1px solid transparent;
+  transition:background .4s var(--ease), border-color .4s var(--ease), padding .4s var(--ease);
+  padding:26px 0;
+}
+header.scrolled{background:rgba(8,7,6,.92); backdrop-filter:blur(14px); border-color:var(--hairline); padding:14px 0;}
+nav{display:flex; align-items:center; justify-content:space-between; gap:14px;}
+.brand{display:flex; flex-direction:column; line-height:1.15; min-width:0; flex-shrink:1; max-width:46vw;}
+.brand .name{font-family:var(--display); font-size:14px; letter-spacing:.08em; color:var(--paper); white-space:normal;}
+.brand .tag{font-family:var(--serif); font-size:11px; color:var(--gold); letter-spacing:.05em; margin-top:5px; white-space:nowrap;}
+@media (max-width:400px){
+  .brand .name{font-size:12.5px; letter-spacing:.05em;}
+  .brand .tag{display:none;}
+  .nav-actions{gap:8px;}
+  .btn-sm{padding:10px 14px; font-size:9.5px;}
+}
+.nav-links{display:flex; align-items:center; gap:34px;}
+.nav-links a{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--paper-dim); transition:color .3s;}
+.nav-links a:hover{color:var(--gold-bright);}
+.nav-actions{display:flex; align-items:center; gap:14px;}
+.lang-switch{
+  display:flex; align-items:center; border:1px solid var(--hairline); border-radius:20px; overflow:hidden;
+  font-family:var(--display); font-size:10.5px; letter-spacing:.05em;
+}
+.lang-switch button{
+  padding:8px 14px; background:transparent; color:var(--muted); border:none;
+  transition:background .3s var(--ease), color .3s var(--ease), transform .4s var(--bounce);
+}
+.lang-switch button:active{transform:scale(.9); transition-duration:.15s;}
+.lang-switch button.active{background:var(--gold); color:var(--ink);}
+
+.lang-float{
+  display:none; position:fixed; top:88px; right:16px; z-index:950;
+  align-items:center; border:1px solid var(--hairline); border-radius:20px; overflow:hidden;
+  background:rgba(18,16,9,.9); backdrop-filter:blur(10px);
+  font-family:var(--display); font-size:11px; letter-spacing:.05em;
+  box-shadow:0 8px 22px -8px rgba(0,0,0,.6);
+}
+.lang-float button{
+  padding:9px 15px; background:transparent; color:var(--muted); border:none;
+  transition:background .3s var(--ease), color .3s var(--ease), transform .4s var(--bounce);
+}
+.lang-float button.active{background:var(--gold); color:var(--ink);}
+.lang-float button:active{transform:scale(.9); transition-duration:.15s;}
+@media (max-width:980px){ .lang-float{display:flex;} }
+.nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px;}
+.nav-toggle span{width:24px; height:1.5px; background:var(--paper);}
+.mobile-panel{
+  position:fixed; inset:0 0 0 auto; width:min(78vw,320px); background:var(--charcoal);
+  border-left:1px solid var(--hairline); z-index:1100; padding:100px 32px 40px;
+  transform:translateX(100%); transition:transform .5s var(--ease);
+  display:flex; flex-direction:column; gap:26px;
+}
+.mobile-panel.open{transform:translateX(0);}
+.mobile-panel a{font-family:var(--serif); font-size:22px; color:var(--paper);}
+.scrim{position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:1050; opacity:0; pointer-events:none; transition:opacity .4s;}
+.scrim.open{opacity:1; pointer-events:auto;}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative; min-height:100vh; min-height:100svh; min-height:calc(var(--vh, 1vh) * 100);
+  display:flex; align-items:flex-end;
+  overflow:hidden; padding-bottom:90px;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(201,164,92,.14), transparent 55%),
+    linear-gradient(180deg, rgba(8,7,6,.35) 0%, rgba(8,7,6,.55) 55%, var(--ink) 100%),
+    repeating-linear-gradient(115deg, #171310 0px, #171310 2px, #14110d 2px, #14110d 4px);
+}
+.hero-bg::after{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at 50% 45%, transparent 0%, rgba(8,7,6,.15) 60%, rgba(8,7,6,.75) 100%);
+}
+/* aperture iris — signature load animation */
+.iris{
+  position:fixed; inset:0; z-index:3000; background:var(--ink);
+  display:flex; align-items:center; justify-content:center;
+  clip-path:circle(150% at 50% 50%);
+  transition:clip-path 1.3s var(--ease);
+}
+.iris.closed{clip-path:circle(0% at 50% 50%);}
+.iris-blades{position:relative; width:120px; height:120px;}
+.iris-blades span{
+  position:absolute; inset:0; border:1px solid var(--gold-dim); border-radius:50%;
+  animation:spin 3s linear infinite;
+}
+.iris-blades span:nth-child(2){inset:14px; border-color:var(--gold); animation-duration:2.2s; animation-direction:reverse;}
+.iris-blades span:nth-child(3){inset:28px; border-color:var(--gold-bright); animation-duration:1.6s;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+.hero-content{position:relative; z-index:2; width:100%;}
+.hero-eyebrow{font-family:var(--display); font-size:11px; letter-spacing:.35em; color:var(--gold); text-transform:uppercase; opacity:0; animation:riseIn .9s .3s var(--ease) forwards;}
+.hero-title{
+  font-family:var(--serif); font-weight:600; font-size:clamp(46px,9vw,108px); line-height:.98;
+  color:var(--paper); margin:16px 0 10px; letter-spacing:-.01em;
+  opacity:0; animation:riseIn 1s .5s var(--ease) forwards;
+}
+.hero-title em{font-style:italic; color:var(--gold-bright);}
+.hero-sub{
+  font-family:var(--serif); font-size:clamp(16px,2vw,22px); color:var(--paper-dim); max-width:560px; margin-bottom:38px;
+  opacity:0; animation:riseIn 1s .7s var(--ease) forwards;
+}
+.hero-buttons{opacity:0; animation:riseIn 1s .9s var(--ease) forwards;}
+.hero-trust{
+  margin-top:44px; font-family:var(--display); font-size:10.5px; letter-spacing:.14em; color:var(--muted); text-transform:uppercase;
+  opacity:0; animation:riseIn 1s 1.1s var(--ease) forwards; display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.hero-trust .dot{width:3px; height:3px; background:var(--gold); border-radius:50%;}
+@keyframes riseIn{from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);}}
+.scroll-cue{
+  position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:2;
+  width:1px; height:44px; background:linear-gradient(180deg, var(--gold), transparent);
+}
+.scroll-cue::after{content:''; position:absolute; top:0; left:-2.5px; width:6px; height:6px; border-radius:50%; background:var(--gold-bright); animation:cueMove 2.2s ease-in-out infinite;}
+@keyframes cueMove{0%{top:0; opacity:1;} 90%{opacity:0;} 100%{top:100%; opacity:0;}}
+
+/* ============================================================
+   REVEAL ON SCROLL
+   ============================================================ */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .9s var(--ease), transform .9s var(--ease);}
+.reveal.in{opacity:1; transform:translateY(0);}
+.reveal-d1{transition-delay:.08s;} .reveal-d2{transition-delay:.16s;} .reveal-d3{transition-delay:.24s;} .reveal-d4{transition-delay:.32s;}
+.slide-left{opacity:0; transform:translateX(-70px); transition:opacity 1s var(--ease), transform 1s var(--ease);}
+.slide-left.in{opacity:1; transform:translateX(0);}
+.slide-right{opacity:0; transform:translateX(70px); transition:opacity 1s var(--ease), transform 1s var(--ease);}
+.slide-right.in{opacity:1; transform:translateX(0);}
+
+/* auto-scrolling marquee */
+.marquee-strip{
+  overflow:hidden; border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline);
+  background:var(--charcoal); padding:16px 0;
+}
+.marquee-track{
+  display:flex; align-items:center; gap:40px; width:max-content;
+  animation:marqueeScroll 26s linear infinite;
+}
+.marquee-track span{
+  font-family:var(--display); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--gold-dim);
+  white-space:nowrap; display:flex; align-items:center; gap:40px;
+}
+.marquee-track span b{color:var(--gold-bright); font-weight:500; margin:0 6px;}
+@keyframes marqueeScroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+@media (prefers-reduced-motion: reduce){ .marquee-track{animation:none;} }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{background:var(--ink);}
+.about-grid{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+.about-frame{
+  position:relative; aspect-ratio:4/5; border:1px solid var(--hairline); padding:18px;
+}
+.about-frame-inner{
+  width:100%; height:100%; background:
+    linear-gradient(160deg, #211c14, #14110c);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
+  color:var(--gold-dim); position:relative;
+}
+.about-frame-inner svg{width:52px; height:52px; opacity:.8;}
+.about-frame-corner{position:absolute; width:22px; height:22px; border:1.5px solid var(--gold);}
+.about-frame-corner.tl{top:-1px; left:-1px; border-right:none; border-bottom:none;}
+.about-frame-corner.br{bottom:-1px; right:-1px; border-left:none; border-top:none;}
+.about-facts{display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:38px;}
+.about-fact{border-top:1px solid var(--hairline); padding-top:14px;}
+.about-fact b{display:block; font-family:var(--serif); font-size:26px; color:var(--gold-bright); font-weight:600;}
+.about-fact span{font-size:13px; color:var(--muted); letter-spacing:.03em;}
+
+/* ============================================================
+   SERVICE / FEATURE CARDS
+   ============================================================ */
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:26px;}
+.grid-4{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+.card{
+  background:linear-gradient(165deg, var(--panel), var(--panel-2));
+  border:1px solid var(--hairline); padding:38px 30px; position:relative; overflow:hidden;
+  transition:transform .55s var(--bounce), border-color .5s var(--ease), background .5s var(--ease), box-shadow .5s var(--ease);
+}
+.card::before{
+  content:''; position:absolute; top:0; left:0; width:0; height:1.5px; background:var(--gold); transition:width .6s var(--ease);
+}
+.card:hover{transform:translateY(-10px) scale(1.03); border-color:rgba(201,164,92,.4); box-shadow:0 20px 40px -18px rgba(0,0,0,.5);}
+.card:hover::before{width:100%;}
+.card:active{transform:translateY(-4px) scale(.99); transition-duration:.15s;}
+.card-num{font-family:var(--display); font-size:11px; color:var(--gold-dim); letter-spacing:.1em;}
+.card-icon{width:38px; height:38px; margin-bottom:20px; color:var(--gold);}
+.card h3{font-family:var(--serif); font-size:22px; font-weight:600; color:var(--paper); margin:14px 0 10px;}
+.card p{font-size:14.5px; color:var(--paper-dim); font-weight:300; line-height:1.65;}
+
+.services{background:var(--charcoal); position:relative;}
+.services .grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+
+/* cinematic experience */
+.experience{background:var(--ink);}
+.experience .grid-4{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));}
+.exp-card{text-align:left; padding:34px 26px; border:1px solid var(--hairline); background:var(--panel); transition:transform .55s var(--bounce), border-color .4s var(--ease);}
+.exp-card:hover{transform:translateY(-8px) scale(1.03); border-color:rgba(201,164,92,.4);}
+.exp-card:active{transform:translateY(-3px) scale(.99); transition-duration:.15s;}
+.exp-card svg{width:34px; height:34px; color:var(--gold); margin-bottom:18px;}
+.exp-card h3{font-family:var(--serif); font-size:19px; margin-bottom:8px; color:var(--paper);}
+.exp-card p{font-size:13.5px; color:var(--paper-dim);}
+
+/* ============================================================
+   PORTFOLIO / GALLERY
+   ============================================================ */
+.portfolio{background:var(--charcoal);}
+.filter-row{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:44px;}
+.filter-btn{
+  padding:9px 20px; border:1px solid var(--hairline); background:transparent; color:var(--paper-dim);
+  font-family:var(--display); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; border-radius:20px;
+  transition:transform .45s var(--bounce), border-color .3s var(--ease), color .3s var(--ease);
+}
+.filter-btn.active, .filter-btn:hover{border-color:var(--gold); color:var(--gold-bright); transform:scale(1.08);}
+.filter-btn:active{transform:scale(.94); transition-duration:.15s;}
+.gallery-grid{display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:180px; gap:16px;}
+.gallery-item{
+  position:relative; overflow:hidden; grid-column:span 1; grid-row:span 1;
+  background:linear-gradient(150deg,#221c14,#15120d);
+  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
+  border:1px solid var(--hairline); transition:transform .5s var(--bounce), border-color .35s var(--ease);
+}
+.gallery-item:hover{border-color:var(--gold); transform:scale(1.035);}
+.gallery-item:active{transform:scale(.98); transition-duration:.15s;}
+.gallery-item:nth-child(4n+1){grid-column:span 2; grid-row:span 2;}
+.gallery-item svg{width:28px; height:28px; color:var(--gold-dim); transition:color .4s;}
+.gallery-item .g-label{font-family:var(--display); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+.gallery-item::after{
+  content:''; position:absolute; inset:0; background:linear-gradient(0deg, rgba(8,7,6,.75), transparent 60%);
+  opacity:0; transition:opacity .4s;
+}
+.gallery-item .g-cat{
+  position:absolute; bottom:16px; left:16px; font-family:var(--serif); font-size:17px; color:var(--paper);
+  opacity:0; transform:translateY(10px); transition:all .4s; z-index:2;
+}
+.gallery-item:hover::after{opacity:1;}
+.gallery-item:hover svg{color:var(--gold-bright);}
+.gallery-item:hover .g-cat{opacity:1; transform:translateY(0);}
+.gallery-note{
+  margin-top:30px; font-size:12.5px; color:var(--muted); font-style:italic; border-left:2px solid var(--gold-dim); padding-left:16px;
+}
+
+/* video showcase */
+.video-showcase{background:var(--ink);}
+.video-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px;}
+.video-card{position:relative; aspect-ratio:16/10; background:linear-gradient(160deg,#201a13,#120f0b); border:1px solid var(--hairline); overflow:hidden; display:flex; align-items:center; justify-content:center;}
+.play-btn{
+  width:60px; height:60px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center;
+  transition:transform .5s var(--bounce), background .4s var(--ease); position:relative; z-index:2;
+}
+.play-btn::after{content:''; position:absolute; inset:-1px; border-radius:50%; border:1px solid var(--gold); opacity:.5; animation:pulse 2.4s ease-out infinite;}
+.play-btn svg{width:16px; height:16px; color:var(--gold-bright); margin-left:2px;}
+.video-card:hover .play-btn{background:var(--gold); transform:scale(1.15);}
+.video-card:active .play-btn{transform:scale(.95); transition-duration:.15s;}
+.video-card:hover .play-btn svg{color:var(--ink);}
+@keyframes pulse{0%{transform:scale(1); opacity:.6;} 100%{transform:scale(1.5); opacity:0;}}
+.video-title{position:absolute; bottom:16px; left:18px; font-family:var(--serif); font-size:16px; color:var(--paper-dim); z-index:2;}
+
+/* why choose us */
+.why{background:var(--charcoal);}
+.why-list{display:flex; flex-direction:column;}
+.why-item{
+  display:flex; align-items:center; gap:28px; padding:26px 0; border-bottom:1px solid var(--hairline);
+  transition:transform .45s var(--bounce), padding-left .45s var(--bounce);
+}
+.why-item:hover{transform:translateX(6px); padding-left:6px;}
+.why-item:first-child{border-top:1px solid var(--hairline);}
+.why-num{font-family:var(--serif); font-size:34px; color:var(--gold-dim); font-weight:600; width:56px;}
+.why-item h3{font-family:var(--serif); font-size:21px; color:var(--paper); font-weight:600;}
+.why-item p{font-size:13.5px; color:var(--muted); margin-top:2px;}
+
+/* ============================================================
+   BOOKING FORM
+   ============================================================ */
+.booking{background:var(--ink); position:relative;}
+.booking-wrap{display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:flex-start;}
+.booking-info-card{
+  background:linear-gradient(165deg,var(--panel),var(--panel-2)); border:1px solid var(--hairline); padding:40px 32px;
+}
+.booking-info-card h3{font-family:var(--serif); font-size:24px; margin-bottom:18px; color:var(--gold-bright);}
+.booking-info-card p{font-size:14px; color:var(--paper-dim); margin-bottom:24px;}
+.contact-row{display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px solid var(--hairline);}
+.contact-row:last-child{border-bottom:1px solid var(--hairline);}
+.contact-row svg{width:18px; height:18px; color:var(--gold); flex-shrink:0;}
+.contact-row a, .contact-row span{font-size:14px; color:var(--paper);}
+
+.form-card{background:var(--panel); border:1px solid var(--hairline); padding:40px;}
+.form-grid{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+.field{margin-bottom:22px; display:flex; flex-direction:column; gap:8px;}
+.field label{font-family:var(--display); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted);}
+.field input, .field select, .field textarea{
+  background:transparent; border:none; border-bottom:1px solid var(--hairline); color:var(--paper);
+  padding:10px 2px; font-family:var(--sans); font-size:15px; font-weight:300; transition:border-color .3s;
+}
+.field select option{background:var(--panel); color:var(--paper);}
+.field input:focus, .field select:focus, .field textarea:focus{border-color:var(--gold); outline:none;}
+.field textarea{resize:vertical; min-height:70px;}
+.date-mode-toggle{display:flex; gap:8px; margin-bottom:4px;}
+.date-mode-btn{
+  padding:6px 14px; border:1px solid var(--hairline); background:transparent; color:var(--muted);
+  font-family:var(--display); font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; border-radius:16px;
+  transition:transform .4s var(--bounce), border-color .3s var(--ease), color .3s var(--ease), background .3s var(--ease);
+}
+.date-mode-btn.active{border-color:var(--gold); color:var(--ink); background:var(--gold);}
+.date-mode-btn:hover{border-color:var(--gold); color:var(--gold-bright);}
+.date-mode-btn.active:hover{color:var(--ink);}
+.date-mode-btn:active{transform:scale(.92); transition-duration:.15s;}
+.date-range-row{display:flex;}
+.date-range-row input{width:100%;}
+.field.error input, .field.error select{border-color:#c85a4d;}
+.field .err-msg{font-size:11.5px; color:#e08678; display:none;}
+.field.error .err-msg{display:block;}
+.form-note{font-size:12px; color:var(--muted); margin-top:6px; font-style:italic;}
+.form-status{
+  margin-top:18px; padding:16px 18px; border:1px solid var(--gold-dim); font-size:13.5px; color:var(--gold-bright);
+  display:none; background:rgba(201,164,92,.08);
+}
+.form-status.show{display:block;}
+
+/* pricing */
+.pricing{background:var(--charcoal); text-align:center;}
+.pricing-card{
+  max-width:640px; margin:0 auto; border:1px solid var(--gold-dim); padding:56px 40px; position:relative;
+  background:linear-gradient(165deg,var(--panel),var(--panel-2));
+}
+.pricing-card h3{font-family:var(--serif); font-size:30px; color:var(--gold-bright); margin-bottom:16px;}
+.pricing-card p{color:var(--paper-dim); font-size:15px; margin-bottom:30px;}
+
+/* service areas */
+.areas{background:var(--ink);}
+.areas-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px;}
+.area-card{border:1px solid var(--hairline); padding:34px; text-align:center; transition:transform .5s var(--bounce), border-color .35s var(--ease);}
+.area-card:hover{transform:translateY(-8px) scale(1.03); border-color:rgba(201,164,92,.4);}
+.area-card:active{transform:translateY(-3px) scale(.99); transition-duration:.15s;}
+.area-card svg{width:30px; height:30px; color:var(--gold); margin-bottom:14px;}
+.area-card h3{font-family:var(--serif); font-size:24px; color:var(--paper);}
+.areas-note{text-align:center; margin-top:28px; color:var(--muted); font-size:13.5px;}
+
+/* instagram */
+.instagram{background:var(--charcoal); text-align:center;}
+.insta-icon{width:44px; height:44px; color:var(--gold); margin:0 auto 20px;}
+
+/* testimonials */
+.testimonials{background:var(--ink); text-align:center;}
+.testi-box{max-width:520px; margin:0 auto; border:1px dashed var(--hairline); padding:56px 32px;}
+.testi-box svg{width:34px; height:34px; color:var(--gold-dim); margin:0 auto 18px;}
+.testi-box h3{font-family:var(--serif); font-size:24px; color:var(--paper-dim); font-style:italic;}
+
+/* contact */
+.contact{background:var(--charcoal);}
+.contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+.contact-card{border:1px solid var(--hairline); padding:44px; background:var(--panel);}
+.contact-card .brand-big{font-family:var(--display); font-size:22px; letter-spacing:.1em; color:var(--gold-bright); margin-bottom:20px;}
+.contact-list{display:flex; flex-direction:column; gap:16px; margin-bottom:28px;}
+.contact-list .row{display:flex; gap:12px; align-items:center; font-size:15px; color:var(--paper-dim);}
+.contact-list svg{width:18px; height:18px; color:var(--gold); flex-shrink:0;}
+
+/* footer */
+footer{background:var(--ink); border-top:1px solid var(--hairline); padding:60px 0 26px;}
+.footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:40px;}
+.footer-brand .name{font-family:var(--display); font-size:17px; letter-spacing:.1em; color:var(--paper); margin-bottom:10px;}
+.footer-brand p{font-size:13px; color:var(--muted); max-width:280px;}
+.footer-col h4{font-family:var(--display); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+.footer-col a, .footer-col span{display:block; font-size:13.5px; color:var(--muted); margin-bottom:10px; transition:color .3s;}
+.footer-col a:hover{color:var(--gold-bright);}
+.footer-bottom{
+  border-top:1px solid var(--hairline); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  font-size:12px; color:var(--muted);
+}
+
+/* floating buttons */
+.floating-actions{position:fixed; right:20px; bottom:20px; z-index:900; display:flex; flex-direction:column; gap:12px;}
+.fab{
+  width:54px; height:54px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 10px 26px -8px rgba(0,0,0,.6); transition:transform .5s var(--bounce);
+}
+.fab:hover{transform:scale(1.15) rotate(-6deg);}
+.fab:active{transform:scale(.92); transition-duration:.15s;}
+.fab svg{width:24px; height:24px;}
+.fab-wa{background:#25D366; color:#fff;}
+.fab-call{background:var(--gold); color:var(--ink);}
+.back-top{
+  position:fixed; left:20px; bottom:20px; z-index:900; width:44px; height:44px; border-radius:50%;
+  border:1px solid var(--hairline); background:rgba(18,16,9,.85); backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center; color:var(--gold);
+  opacity:0; pointer-events:none;
+  transition:opacity .4s var(--ease), transform .45s var(--bounce), border-color .3s var(--ease);
+}
+.back-top.show{opacity:1; pointer-events:auto;}
+.back-top:hover{transform:scale(1.15) translateY(-3px); border-color:var(--gold);}
+.back-top:active{transform:scale(.92); transition-duration:.15s;}
+.back-top svg{width:18px; height:18px;}
+
+.sticky-book{
+  position:fixed; bottom:20px; left:50%; transform:translateX(-50%); z-index:900;
+  display:none;
+}
+@media (max-width:760px){
+  .sticky-book{display:block;}
+  .floating-actions{bottom:88px;}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .nav-links{display:none;}
+  .lang-switch{display:none;}
+  .nav-toggle{display:flex;}
+  .about-grid, .booking-wrap, .contact-grid, .areas-grid{grid-template-columns:1fr;}
+  .grid-3, .grid-4{grid-template-columns:repeat(2,1fr);}
+  .form-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr; gap:28px;}
+  .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:150px;}
+  .gallery-item:nth-child(4n+1){grid-column:span 2; grid-row:span 1;}
+}
+@media (max-width:560px){
+  .section{padding:72px 0;}
+  .grid-3, .grid-4{grid-template-columns:1fr;}
+  .btn-row{width:100%;}
+  .btn-row .btn{flex:1;}
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.01ms !important; transition-duration:.01ms !important;}
+}
+[data-lang="hi"] .hero-title, [data-lang="hi"] .h2, [data-lang="hi"] .lede, [data-lang="hi"] h3{font-family:var(--serif);}
+</style>
+</head>
+<body>
+
+<!-- Iris load transition (signature element) -->
+<div class="iris" id="iris">
+  <div class="iris-blades"><span></span><span></span><span></span></div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+
+<!-- ============ HEADER ============ -->
+<header id="siteHeader">
+  <div class="container">
+    <nav>
+      <a href="#home" class="brand">
+        <span class="name" data-i18n="brandName">VIKASH SHARMA PRODUCTION</span>
+        <span class="tag" data-i18n="brandTag">Your Moments. Our Story.</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+        <a href="#pricing" data-i18n="navPricing">Pricing</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <div class="lang-switch">
+          <button data-lang-btn="hi">हिंदी</button>
+          <button data-lang-btn="en" class="active">English</button>
+        </div>
+        <a href="#booking" class="btn btn-gold btn-sm" data-i18n="navBook">Book Now</a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <div class="lang-switch" style="align-self:flex-start; margin-bottom:10px;">
+    <button data-lang-btn="hi">हिंदी</button>
+    <button data-lang-btn="en" class="active">English</button>
+  </div>
+  <a href="#about" data-i18n="navAbout">About</a>
+  <a href="#services" data-i18n="navServices">Services</a>
+  <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+  <a href="#pricing" data-i18n="navPricing">Pricing</a>
+  <a href="#contact" data-i18n="navContact">Contact</a>
+  <a href="#booking" class="btn btn-gold" data-i18n="navBook">Book Now</a>
+</div>
+
+<!-- Always-visible floating language toggle (mobile) -->
+<div class="lang-float" id="langFloat">
+  <button data-lang-btn="hi">हिं</button>
+  <button data-lang-btn="en" class="active">EN</button>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-content">
+    <span class="hero-eyebrow" data-i18n="heroEyebrow">Wedding Photography &amp; Cinematography</span>
+    <h1 class="hero-title" data-i18n-html="heroTitle">Your Moments. <em>Our Story.</em></h1>
+    <p class="hero-sub" data-i18n="heroSub">Professional Wedding Photography &amp; Cinematography in Gopalganj &amp; Siwan, Bihar.</p>
+    <div class="btn-row hero-buttons">
+      <a href="#booking" class="btn btn-gold" data-i18n="btnBookNow">Book Now</a>
+      <a href="tel:+918603933215" class="btn btn-ghost" data-i18n="btnCallNow">Call Now</a>
+    </div>
+    <div class="hero-trust">
+      <span data-i18n="trust1">3–5 Years of Experience</span><span class="dot"></span>
+      <span data-i18n="trust2">Photography</span><span class="dot"></span>
+      <span data-i18n="trust3">Videography</span><span class="dot"></span>
+      <span data-i18n="trust4">Drone Coverage</span>
+    </div>
+  </div>
+  <div class="scroll-cue"></div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="slide-left">
+      <div class="about-frame">
+        <div class="about-frame-corner tl"></div>
+        <div class="about-frame-corner br"></div>
+        <div class="about-frame-inner">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="4"/></svg>
+          <span style="font-family:'Cinzel',serif; font-size:10px; letter-spacing:.14em; text-transform:uppercase;" data-i18n="aboutPlaceholder">Studio Portrait — Add Photo</span>
+        </div>
+      </div>
+      <div class="about-facts">
+        <div class="about-fact"><b>3–5</b><span data-i18n="aboutFact1">Years of Experience</span></div>
+        <div class="about-fact"><b>4K</b><span data-i18n="aboutFact2">Cinematic Video</span></div>
+        <div class="about-fact"><b data-i18n="aboutFact3b">Drone</b><span data-i18n="aboutFact3">Aerial Coverage</span></div>
+        <div class="about-fact"><b data-i18n="aboutFact4b">Albums</b><span data-i18n="aboutFact4">Wedding Album Design</span></div>
+      </div>
+    </div>
+    <div class="slide-right">
+      <span class="eyebrow" data-i18n="aboutEyebrow">About the Studio</span>
+      <h2 class="h2" data-i18n="aboutTitle">Telling your story, one frame at a time.</h2>
+      <p class="lede" style="margin-top:20px;" data-i18n="aboutBody">Vikash Sharma Production captures weddings, celebrations and special occasions through thoughtful photography and cinematic videography. With 3–5 years of experience, professional cameras, 4K video capability and drone coverage, we bring a cinematic eye to every event we cover — proudly serving Gopalganj and Siwan, Bihar. We also design and deliver beautifully crafted wedding albums so your memories last a lifetime.</p>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="reel-divider"><div class="line"></div><div class="holes"><span></span><span></span><span></span><span></span><span></span></div><div class="line"></div></div></div>
+
+<!-- ============ SCROLLING MARQUEE ============ -->
+<div class="marquee-strip" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="servicesEyebrow">What We Offer</span>
+      <h2 class="h2" data-i18n="servicesTitle">Our Services</h2>
+    </div>
+    <div class="grid-3" id="servicesGrid"></div>
+  </div>
+</section>
+
+<!-- ============ CINEMATIC EXPERIENCE ============ -->
+<section class="section experience">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="expEyebrow">The Craft</span>
+      <h2 class="h2" data-i18n="expTitle">The Cinematic Experience</h2>
+    </div>
+    <div class="grid-4" id="expGrid"></div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO / GALLERY ============ -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="portEyebrow">Our Work</span>
+      <h2 class="h2" data-i18n="portTitle">Portfolio</h2>
+    </div>
+    <div class="filter-row reveal" id="filterRow"></div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <p class="gallery-note" data-i18n="galleryNote">Note for editing: Replace these placeholder tiles with Vikash Sharma Production's actual photographs and videos.</p>
+  </div>
+</section>
+
+<!-- ============ VIDEO SHOWCASE ============ -->
+<section class="section video-showcase">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="vidEyebrow">Watch</span>
+      <h2 class="h2" data-i18n="vidTitle">Video Showcase</h2>
+    </div>
+    <div class="video-grid" id="videoGrid"></div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="whyEyebrow">Why Us</span>
+      <h2 class="h2" data-i18n="whyTitle">Why Choose Us</h2>
+    </div>
+    <div class="why-list" id="whyList"></div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section booking" id="booking">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow" data-i18n="bookEyebrow">Get Started</span>
+      <h2 class="h2" data-i18n="bookTitle">Request a Booking</h2>
+      <p class="lede" style="margin-top:18px;" data-i18n="bookLede">Share your event details and we'll get back to you to confirm availability. This is a booking enquiry — we'll follow up to confirm.</p>
+    </div>
+    <div class="booking-wrap">
+      <div class="booking-info-card reveal">
+        <h3 data-i18n="bookInfoTitle">Prefer to talk directly?</h3>
+        <p data-i18n="bookInfoBody">Call or message us on WhatsApp — available in Hindi and English.</p>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:+918603933215">+91 86039 33215</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <a href="https://wa.me/918603933215" target="_blank" rel="noopener" data-i18n="whatsappUs">WhatsApp Us</a>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="serviceAreasShort">Gopalganj &amp; Siwan, Bihar</span>
+        </div>
+      </div>
+
+      <form class="form-card reveal reveal-d2" id="bookingForm" novalidate>
+        <div class="form-grid">
+          <div class="field" id="f-name">
+            <label data-i18n="labelName">Customer Name</label>
+            <input type="text" name="name" autocomplete="name">
+            <span class="err-msg" data-i18n="errName">Please enter your name.</span>
+          </div>
+          <div class="field" id="f-phone">
+            <label data-i18n="labelPhone">Phone Number</label>
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel">
+            <span class="err-msg" data-i18n="errPhone">Please enter a valid phone number.</span>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="field" id="f-event">
+            <label data-i18n="labelEvent">Event Type</label>
+            <select name="event">
+              <option value="" data-i18n="optSelect">Select event type</option>
+              <option value="Wedding" data-i18n="optWedding">Wedding</option>
+              <option value="Pre-Wedding" data-i18n="optPreWedding">Pre-Wedding</option>
+              <option value="Engagement" data-i18n="optEngagement">Engagement</option>
+              <option value="Birthday" data-i18n="optBirthday">Birthday</option>
+              <option value="Reception" data-i18n="optReception">Reception</option>
+              <option value="Short Film" data-i18n="optFilm">Short Film Shooting</option>
+              <option value="Music Video" data-i18n="optMusicVideo">Music Video Shooting</option>
+              <option value="Other" data-i18n="optOther">Other</option>
+            </select>
+            <span class="err-msg" data-i18n="errEvent">Please select an event type.</span>
+          </div>
+          <div class="field" id="f-date">
+            <label data-i18n="labelDate">Event Date</label>
+            <div class="date-mode-toggle" role="group" aria-label="Date mode">
+              <button type="button" class="date-mode-btn active" data-mode="single" data-i18n="dateModeSingle">Single Date</button>
+              <button type="button" class="date-mode-btn" data-mode="multi" data-i18n="dateModeMulti">Multiple Days</button>
+            </div>
+            <input type="date" name="date" id="dateSingle">
+            <div id="dateMultiWrap" style="display:none; gap:14px;" class="date-range-row">
+              <div style="flex:1;">
+                <input type="date" name="dateStart" id="dateStart" data-i18n-aria="dateFrom" aria-label="From date">
+                <span style="font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase;" data-i18n="dateFrom">From</span>
+              </div>
+              <div style="flex:1;">
+                <input type="date" name="dateEnd" id="dateEnd" data-i18n-aria="dateTo" aria-label="To date">
+                <span style="font-size:10px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase;" data-i18n="dateTo">To</span>
+              </div>
+            </div>
+            <span class="err-msg" data-i18n="errDate">Please choose an event date.</span>
+          </div>
+        </div>
+        <div class="field" id="f-location">
+          <label data-i18n="labelLocation">Event Location</label>
+          <input type="text" name="location" data-i18n-placeholder="placeLocation" placeholder="Village/Town, District">
+          <span class="err-msg" data-i18n="errLocation">Please enter the event location.</span>
+        </div>
+        <div class="field">
+          <label data-i18n="labelReq">Additional Requirements</label>
+          <textarea name="requirements" data-i18n-placeholder="placeReq" placeholder="Tell us more about your event..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;" data-i18n="btnRequestBooking">Request Booking</button>
+        <p class="form-note" data-i18n="bookFormNote">Submitting this form sends a booking enquiry via WhatsApp. It does not confirm your booking until we get back to you.</p>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section pricing" id="pricing">
+  <div class="container">
+    <div class="pricing-card reveal">
+      <span class="eyebrow" data-i18n="priceEyebrow">Pricing</span>
+      <h3 data-i18n="priceTitle">Custom Packages Available</h3>
+      <p data-i18n="priceBody">Every event is different. Contact us for a package based on your event, location and requirements.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="#booking" class="btn btn-gold" data-i18n="btnGetQuote">Get Quote</a>
+        <a href="https://wa.me/918603933215" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="whatsappUs">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICE AREAS ============ -->
+<section class="section areas">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow" data-i18n="areasEyebrow">Where We Work</span>
+      <h2 class="h2" data-i18n="areasTitle">Serving Gopalganj &amp; Siwan, Bihar</h2>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3>Gopalganj</h3>
+      </div>
+      <div class="area-card reveal reveal-d2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <h3>Siwan</h3>
+      </div>
+    </div>
+    <p class="areas-note" data-i18n="areasNote">Have an event outside these areas? Contact us to check availability.</p>
+  </div>
+</section>
+
+<!-- ============ INSTAGRAM ============ -->
+<section class="section instagram">
+  <div class="container">
+    <svg class="insta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg>
+    <h2 class="h2 reveal" data-i18n="instaTitle">Follow the Journey</h2>
+    <p class="lede reveal reveal-d2" style="margin:16px auto 30px;" data-i18n="instaBody">See our latest work and behind-the-scenes moments on Instagram.</p>
+    <a href="https://www.instagram.com/vikash_sharma_production_345?igsh=MTd5bDFlbGNpZHUycg==" target="_blank" rel="noopener" class="btn btn-gold reveal reveal-d3" data-i18n="btnFollowInsta">Follow on Instagram</a>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="testi-box reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M7 8a4 4 0 0 0-4 4v6h6v-6H6a2 2 0 0 1 2-2V8zm11 0a4 4 0 0 0-4 4v6h6v-6h-3a2 2 0 0 1 2-2V8z"/></svg>
+      <h3 data-i18n="testiTitle">Client Reviews Coming Soon</h3>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <span class="eyebrow" data-i18n="contactEyebrow">Get In Touch</span>
+      <h2 class="h2" data-i18n="contactTitle">Let's create your story</h2>
+      <p class="lede" style="margin-top:16px;" data-i18n="contactBody">Reach out by phone, WhatsApp, Instagram, or the booking form — whichever is easiest for you.</p>
+    </div>
+    <div class="contact-card reveal reveal-d2">
+      <div class="brand-big" data-i18n="brandName">VIKASH SHARMA PRODUCTION</div>
+      <div class="contact-list">
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+918603933215">+91 86039 33215</a></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span data-i18n="serviceAreasShort">Gopalganj &amp; Siwan, Bihar</span></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1"/></svg><a href="https://www.instagram.com/vikash_sharma_production_345?igsh=MTd5bDFlbGNpZHUycg==" target="_blank" rel="noopener">Instagram</a></div>
+      </div>
+      <div class="btn-row">
+        <a href="tel:+918603933215" class="btn btn-gold btn-sm" data-i18n="btnCallNow">Call Now</a>
+        <a href="https://wa.me/918603933215" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-i18n="whatsappUs">WhatsApp Us</a>
+        <a href="#booking" class="btn btn-ghost btn-sm" data-i18n="navBook">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="name" data-i18n="brandName">VIKASH SHARMA PRODUCTION</div>
+        <p data-i18n="footerAbout">Professional wedding photography and cinematography, proudly serving Gopalganj and Siwan, Bihar.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerLinksTitle">Quick Links</h4>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#services" data-i18n="navServices">Services</a>
+        <a href="#portfolio" data-i18n="navPortfolio">Portfolio</a>
+        <a href="#booking" data-i18n="navBook">Book Now</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footerContactTitle">Contact</h4>
+        <a href="tel:+918603933215">+91 86039 33215</a>
+        <a href="https://www.instagram.com/vikash_sharma_production_345?igsh=MTd5bDFlbGNpZHUycg==" target="_blank" rel="noopener">Instagram</a>
+        <span data-i18n="serviceAreasShort">Gopalganj &amp; Siwan, Bihar</span>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footerCopy">© 2026 Vikash Sharma Production. All rights reserved.</span>
+      <span data-i18n="footerTag">Photography &amp; Videography</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating actions -->
+<div class="floating-actions">
+  <a href="https://wa.me/918603933215" target="_blank" rel="noopener" class="fab fab-wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0a11.9 11.9 0 0 0-10.3 17.9L0 24l6.3-1.6A11.9 11.9 0 0 0 12 24a11.9 11.9 0 0 0 8.5-20.5zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.36-.21-3.75.98 1-3.65-.24-.38A9.8 9.8 0 1 1 12 21.8zm5.4-7.3c-.3-.15-1.76-.87-2-.97-.28-.1-.48-.15-.68.15s-.78.97-.96 1.17-.35.22-.65.08a8.1 8.1 0 0 1-2.37-1.46 8.9 8.9 0 0 1-1.64-2.04c-.17-.3 0-.46.13-.6.13-.14.3-.35.44-.53.15-.17.2-.3.3-.5.1-.2.05-.37 0-.52s-.68-1.64-.94-2.24c-.24-.58-.5-.5-.68-.5h-.58c-.2 0-.52.08-.8.37s-1.05 1.03-1.05 2.5 1.08 2.9 1.23 3.1c.15.2 2.13 3.25 5.16 4.55.72.3 1.28.5 1.72.65.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.28.17-1.42s-.28-.2-.58-.37z"/></svg>
+  </a>
+  <a href="tel:+918603933215" class="fab fab-call" aria-label="Call">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+<a href="#booking" class="sticky-book btn btn-gold btn-sm" data-i18n="navBook">Book Now</a>
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+/* ============================================================
+   CONFIGURATION — EDIT BUSINESS DETAILS HERE
+   ============================================================ */
+const CONFIG = {
+  businessName: "Vikash Sharma Production",
+  phone: "+91 86039 33215",
+  phoneHref: "+918603933215",
+  whatsappNumber: "918603933215",
+  instagramUrl: "https://www.instagram.com/vikash_sharma_production_345?igsh=MTd5bDFlbGNpZHUycg==",
+  serviceAreas: ["Gopalganj", "Siwan"],
+  logoUrl: "", // add logo image URL here later
+  upi: "" // add UPI ID here later if needed
+};
+
+/* ============================================================
+   SERVICES / EXPERIENCE / WHY-US / GALLERY / VIDEO DATA
+   (edit text via the translations object below)
+   ============================================================ */
+const cameraIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7l2-3h4l2 3"/><circle cx="12" cy="13.5" r="4"/></svg>';
+const filmIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 3v18M17 3v18M2 8h5M2 16h5M17 8h5M17 16h5"/></svg>';
+const droneIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="12" r="3"/><path d="M5 5l3 3M19 5l-3 3M5 19l3-3M19 19l-3-3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>';
+const albumIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 3v18"/></svg>';
+const ringIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="9" cy="15" r="5"/><circle cx="17" cy="15" r="5"/><path d="M12 5l2 5"/></svg>';
+const partyIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 21l1.6-8.8a2 2 0 0 1 1-1.4l10-5.4a1 1 0 0 1 1.4 1.3l-5 10.3a2 2 0 0 1-1.4 1z"/><path d="M2 21h20"/></svg>';
+const candidIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M20 4L9 15l-5-5"/></svg>';
+const receptionIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 2v20M5 8h14M3 12h18"/></svg>';
+
+// Services: id | icon | key(title)|key(desc)
+const SERVICES = [
+  {icon:ringIcon, t:'svc1t', d:'svc1d'},
+  {icon:filmIcon, t:'svc2t', d:'svc2d'},
+  {icon:cameraIcon, t:'svc3t', d:'svc3d'},
+  {icon:ringIcon, t:'svc4t', d:'svc4d'},
+  {icon:partyIcon, t:'svc5t', d:'svc5d'},
+  {icon:receptionIcon, t:'svc6t', d:'svc6d'},
+  {icon:droneIcon, t:'svc7t', d:'svc7d'},
+  {icon:candidIcon, t:'svc8t', d:'svc8d'},
+  {icon:filmIcon, t:'svc9t', d:'svc9d'},
+  {icon:albumIcon, t:'svc10t', d:'svc10d'},
+  {icon:filmIcon, t:'svc11t', d:'svc11d'}
+];
+const EXPERIENCE = [
+  {icon:filmIcon, t:'exp1t', d:'exp1d'},
+  {icon:droneIcon, t:'exp2t', d:'exp2d'},
+  {icon:cameraIcon, t:'exp3t', d:'exp3d'},
+  {icon:albumIcon, t:'exp4t', d:'exp4d'}
+];
+const WHY = ['why1','why2','why3','why4','why5'];
+const GALLERY_CATS = ['catAll','catWeddings','catPreWedding','catCandid','catCinematic','catDrone','catAlbums'];
+const GALLERY_ITEMS = [
+  {cat:'catWeddings', icon:ringIcon}, {cat:'catCinematic', icon:filmIcon}, {cat:'catDrone', icon:droneIcon},
+  {cat:'catCandid', icon:candidIcon}, {cat:'catPreWedding', icon:cameraIcon}, {cat:'catAlbums', icon:albumIcon},
+  {cat:'catWeddings', icon:cameraIcon}, {cat:'catCinematic', icon:filmIcon}
+];
+const VIDEOS = ['vid1','vid2','vid3','vid4'];
+
+/* ============================================================
+   TRANSLATIONS
+   ============================================================ */
+const I18N = {
+  en:{
+    brandName:"VIKASH SHARMA PRODUCTION", brandTag:"Your Moments. Our Story.",
+    navAbout:"About", navServices:"Services", navPortfolio:"Portfolio", navPricing:"Pricing", navContact:"Contact", navBook:"Book Now",
+    heroEyebrow:"Wedding Photography & Cinematography",
+    heroTitle:"Your Moments. <em>Our Story.</em>",
+    heroSub:"Professional Wedding Photography & Cinematography in Gopalganj & Siwan, Bihar.",
+    btnBookNow:"Book Now", btnCallNow:"Call Now",
+    trust1:"3–5 Years of Experience", trust2:"Photography", trust3:"Videography", trust4:"Drone Coverage",
+    aboutEyebrow:"About the Studio", aboutTitle:"Telling your story, one frame at a time.",
+    aboutBody:"Vikash Sharma Production captures weddings, celebrations and special occasions through thoughtful photography and cinematic videography. With 3–5 years of experience, professional cameras, 4K video capability and drone coverage, we bring a cinematic eye to every event we cover — proudly serving Gopalganj and Siwan, Bihar. We also design and deliver beautifully crafted wedding albums so your memories last a lifetime.",
+    aboutPlaceholder:"Studio Portrait — Add Photo",
+    aboutFact1:"Years of Experience", aboutFact2:"Cinematic Video", aboutFact3b:"Drone", aboutFact3:"Aerial Coverage", aboutFact4b:"Albums", aboutFact4:"Wedding Album Design",
+    servicesEyebrow:"What We Offer", servicesTitle:"Our Services",
+    svc1t:"Wedding Photography", svc1d:"Timeless, elegant photography that captures every emotion of your big day.",
+    svc2t:"Wedding Cinematography", svc2d:"Cinematic films that tell your wedding story in motion.",
+    svc3t:"Pre-Wedding Photography & Video", svc3d:"Beautiful pre-wedding shoots at locations of your choice.",
+    svc4t:"Engagement / Ring Ceremony", svc4d:"Capturing the joy and promise of your engagement day.",
+    svc5t:"Birthday & Family Functions", svc5d:"Warm, candid coverage of your family celebrations.",
+    svc6t:"Reception Coverage", svc6d:"Complete photo and video coverage of your reception evening.",
+    svc7t:"Drone Photography & Videography", svc7d:"Aerial perspectives that add scale and drama to your event.",
+    svc8t:"Traditional & Candid Photography", svc8d:"A mix of classic poses and natural, unposed moments.",
+    svc9t:"4K Video Production", svc9d:"Crisp, high-quality 4K video for every occasion.",
+    svc10t:"Wedding Album Design", svc10d:"Professionally designed albums that preserve your memories.",
+    svc11t:"Short Film & Song Shooting", svc11d:"Creative short films and song/music video shoots, shot and directed with a cinematic touch.",
+    expEyebrow:"The Craft", expTitle:"The Cinematic Experience",
+    exp1t:"4K Cinematography", exp1d:"Capture your special moments with high-quality cinematic video.",
+    exp2t:"Drone Coverage", exp2d:"Add an aerial perspective to your wedding and special events.",
+    exp3t:"Professional Photography", exp3d:"Beautiful candid and traditional moments captured naturally.",
+    exp4t:"Wedding Albums", exp4d:"Preserve your memories in a professionally designed wedding album.",
+    portEyebrow:"Our Work", portTitle:"Portfolio",
+    catAll:"All", catWeddings:"Weddings", catPreWedding:"Pre-Wedding", catCandid:"Candid", catCinematic:"Cinematic", catDrone:"Drone", catAlbums:"Albums",
+    galleryNote:"Note for editing: Replace these placeholder tiles with Vikash Sharma Production's actual photographs and videos.",
+    vidEyebrow:"Watch", vidTitle:"Video Showcase",
+    vid1:"Wedding Film", vid2:"Cinematic Highlights", vid3:"Pre-Wedding Film", vid4:"Drone Film",
+    whyEyebrow:"Why Us", whyTitle:"Why Choose Us",
+    why1:"3–5 Years of Experience", why2:"4K Cinematic Video", why3:"Drone Coverage", why4:"Photography + Videography", why5:"Professional Wedding Albums",
+    bookEyebrow:"Get Started", bookTitle:"Request a Booking",
+    bookLede:"Share your event details and we'll get back to you to confirm availability. This is a booking enquiry — we'll follow up to confirm.",
+    bookInfoTitle:"Prefer to talk directly?", bookInfoBody:"Call or message us on WhatsApp — available in Hindi and English.",
+    whatsappUs:"WhatsApp Us", serviceAreasShort:"Gopalganj & Siwan, Bihar",
+    labelName:"Customer Name", labelPhone:"Phone Number", labelEvent:"Event Type", labelDate:"Event Date", labelLocation:"Event Location", labelReq:"Additional Requirements",
+    errName:"Please enter your name.", errPhone:"Please enter a valid phone number.", errEvent:"Please select an event type.", errDate:"Please choose an event date.", errLocation:"Please enter the event location.",
+    optSelect:"Select event type", optWedding:"Wedding", optPreWedding:"Pre-Wedding", optEngagement:"Engagement", optBirthday:"Birthday", optReception:"Reception", optFilm:"Short Film Shooting", optMusicVideo:"Music Video Shooting", optOther:"Other",
+    dateModeSingle:"Single Date", dateModeMulti:"Multiple Days", dateFrom:"From", dateTo:"To", errDateRange:"Please choose both start and end dates.",
+    placeLocation:"Village/Town, District", placeReq:"Tell us more about your event...",
+    btnRequestBooking:"Request Booking",
+    bookFormNote:"Submitting this form sends a booking enquiry via WhatsApp. It does not confirm your booking until we get back to you.",
+    formSuccess:"Thank you! Your booking enquiry is ready — continue in WhatsApp to send it to us.",
+    priceEyebrow:"Pricing", priceTitle:"Custom Packages Available",
+    priceBody:"Every event is different. Contact us for a package based on your event, location and requirements.",
+    btnGetQuote:"Get Quote",
+    areasEyebrow:"Where We Work", areasTitle:"Serving Gopalganj & Siwan, Bihar",
+    areasNote:"Have an event outside these areas? Contact us to check availability.",
+    instaTitle:"Follow the Journey", instaBody:"See our latest work and behind-the-scenes moments on Instagram.", btnFollowInsta:"Follow on Instagram",
+    testiTitle:"Client Reviews Coming Soon",
+    contactEyebrow:"Get In Touch", contactTitle:"Let's create your story", contactBody:"Reach out by phone, WhatsApp, Instagram, or the booking form — whichever is easiest for you.",
+    footerAbout:"Professional wedding photography and cinematography, proudly serving Gopalganj and Siwan, Bihar.",
+    footerLinksTitle:"Quick Links", footerContactTitle:"Contact",
+    footerCopy:"© 2026 Vikash Sharma Production. All rights reserved.", footerTag:"Photography & Videography"
+  },
+  hi:{
+    brandName:"विकास शर्मा प्रोडक्शन", brandTag:"आपके पल। हमारी कहानी।",
+    navAbout:"परिचय", navServices:"सेवाएं", navPortfolio:"पोर्टफोलियो", navPricing:"मूल्य", navContact:"संपर्क करें", navBook:"बुक करें",
+    heroEyebrow:"वेडिंग फोटोग्राफी और सिनेमैटोग्राफी",
+    heroTitle:"आपके पल। <em>हमारी कहानी।</em>",
+    heroSub:"गोपालगंज और सिवान, बिहार में पेशेवर वेडिंग फोटोग्राफी और सिनेमैटोग्राफी।",
+    btnBookNow:"बुक करें", btnCallNow:"अभी कॉल करें",
+    trust1:"3–5 वर्षों का अनुभव", trust2:"फोटोग्राफी", trust3:"वीडियोग्राफी", trust4:"ड्रोन कवरेज",
+    aboutEyebrow:"स्टूडियो के बारे में", aboutTitle:"हर फ्रेम में आपकी कहानी।",
+    aboutBody:"विकास शर्मा प्रोडक्शन शादियों, समारोहों और खास मौकों को सोच-समझकर फोटोग्राफी और सिनेमैटिक वीडियोग्राफी के ज़रिए कैद करता है। 3–5 वर्षों के अनुभव, पेशेवर कैमरों, 4K वीडियो और ड्रोन कवरेज के साथ, हम गोपालगंज और सिवान, बिहार में हर आयोजन में सिनेमैटिक नज़रिया लाते हैं। हम खूबसूरती से डिज़ाइन की गई वेडिंग एल्बम भी बनाते हैं ताकि आपकी यादें हमेशा के लिए संजोई रहें।",
+    aboutPlaceholder:"स्टूडियो फोटो — यहाँ जोड़ें",
+    aboutFact1:"वर्षों का अनुभव", aboutFact2:"सिनेमैटिक वीडियो", aboutFact3b:"ड्रोन", aboutFact3:"हवाई कवरेज", aboutFact4b:"एल्बम", aboutFact4:"वेडिंग एल्बम डिज़ाइन",
+    servicesEyebrow:"हमारी सेवाएं", servicesTitle:"हमारी सेवाएं",
+    svc1t:"वेडिंग फोटोग्राफी", svc1d:"आपके खास दिन की हर भावना को कैद करती शानदार फोटोग्राफी।",
+    svc2t:"वेडिंग सिनेमैटोग्राफी", svc2d:"आपकी शादी की कहानी को सिनेमैटिक अंदाज़ में दिखाती फिल्में।",
+    svc3t:"प्री-वेडिंग फोटोग्राफी और वीडियो", svc3d:"आपकी पसंदीदा जगह पर खूबसूरत प्री-वेडिंग शूट।",
+    svc4t:"एंगेजमेंट / रिंग सेरेमनी", svc4d:"आपके एंगेजमेंट के दिन की खुशी और वादे को कैद करना।",
+    svc5t:"जन्मदिन और पारिवारिक समारोह", svc5d:"आपके पारिवारिक उत्सवों की आत्मीय और सहज कवरेज।",
+    svc6t:"रिसेप्शन कवरेज", svc6d:"आपकी रिसेप्शन शाम की पूरी फोटो और वीडियो कवरेज।",
+    svc7t:"ड्रोन फोटोग्राफी और वीडियोग्राफी", svc7d:"आपके आयोजन में भव्यता जोड़ते हवाई दृश्य।",
+    svc8t:"पारंपरिक और कैंडिड फोटोग्राफी", svc8d:"क्लासिक पोज़ और स्वाभाविक पलों का मिश्रण।",
+    svc9t:"4K वीडियो प्रोडक्शन", svc9d:"हर मौके के लिए साफ़ और उच्च गुणवत्ता वाला 4K वीडियो।",
+    svc10t:"वेडिंग एल्बम डिज़ाइन", svc10d:"आपकी यादों को संजोए पेशेवर ढंग से डिज़ाइन की गई एल्बम।",
+    svc11t:"शॉर्ट फिल्म और सॉन्ग शूटिंग", svc11d:"सिनेमैटिक अंदाज़ में शूट और डायरेक्ट की गई क्रिएटिव शॉर्ट फिल्में और सॉन्ग/म्यूज़िक वीडियो शूट।",
+    expEyebrow:"हमारा हुनर", expTitle:"सिनेमैटिक अनुभव",
+    exp1t:"4K सिनेमैटोग्राफी", exp1d:"अपने खास पलों को उच्च गुणवत्ता वाले सिनेमैटिक वीडियो में कैद करें।",
+    exp2t:"ड्रोन कवरेज", exp2d:"अपनी शादी और खास आयोजनों में हवाई दृश्य जोड़ें।",
+    exp3t:"पेशेवर फोटोग्राफी", exp3d:"स्वाभाविक रूप से कैद किए गए सुंदर कैंडिड और पारंपरिक पल।",
+    exp4t:"वेडिंग एल्बम", exp4d:"अपनी यादों को पेशेवर ढंग से डिज़ाइन की गई वेडिंग एल्बम में संजोएं।",
+    portEyebrow:"हमारा काम", portTitle:"पोर्टफोलियो",
+    catAll:"सभी", catWeddings:"शादियां", catPreWedding:"प्री-वेडिंग", catCandid:"कैंडिड", catCinematic:"सिनेमैटिक", catDrone:"ड्रोन", catAlbums:"एल्बम",
+    galleryNote:"संपादन नोट: इन प्लेसहोल्डर टाइलों को विकास शर्मा प्रोडक्शन की असली फ़ोटो और वीडियो से बदलें।",
+    vidEyebrow:"देखें", vidTitle:"वीडियो शोकेस",
+    vid1:"वेडिंग फिल्म", vid2:"सिनेमैटिक हाइलाइट्स", vid3:"प्री-वेडिंग फिल्म", vid4:"ड्रोन फिल्म",
+    whyEyebrow:"हमें क्यों चुनें", whyTitle:"हमें क्यों चुनें",
+    why1:"3–5 वर्षों का अनुभव", why2:"4K सिनेमैटिक वीडियो", why3:"ड्रोन कवरेज", why4:"फोटोग्राफी + वीडियोग्राफी", why5:"पेशेवर वेडिंग एल्बम",
+    bookEyebrow:"शुरू करें", bookTitle:"बुकिंग के लिए अनुरोध करें",
+    bookLede:"अपने आयोजन का विवरण भेजें और हम उपलब्धता की पुष्टि के लिए आपसे संपर्क करेंगे। यह एक बुकिंग पूछताछ है — हम पुष्टि के लिए संपर्क करेंगे।",
+    bookInfoTitle:"सीधे बात करना चाहते हैं?", bookInfoBody:"हमें कॉल करें या व्हाट्सएप पर संदेश भेजें — हिंदी और अंग्रेज़ी दोनों में उपलब्ध।",
+    whatsappUs:"व्हाट्सएप करें", serviceAreasShort:"गोपालगंज और सिवान, बिहार",
+    labelName:"ग्राहक का नाम", labelPhone:"फ़ोन नंबर", labelEvent:"आयोजन का प्रकार", labelDate:"आयोजन की तारीख", labelLocation:"आयोजन स्थान", labelReq:"अतिरिक्त आवश्यकताएं",
+    errName:"कृपया अपना नाम दर्ज करें।", errPhone:"कृपया एक मान्य फ़ोन नंबर दर्ज करें।", errEvent:"कृपया आयोजन का प्रकार चुनें।", errDate:"कृपया आयोजन की तारीख चुनें।", errLocation:"कृपया आयोजन स्थान दर्ज करें।",
+    optSelect:"आयोजन का प्रकार चुनें", optWedding:"शादी", optPreWedding:"प्री-वेडिंग", optEngagement:"एंगेजमेंट", optBirthday:"जन्मदिन", optReception:"रिसेप्शन", optFilm:"शॉर्ट फिल्म शूटिंग", optMusicVideo:"म्यूज़िक वीडियो शूटिंग", optOther:"अन्य",
+    dateModeSingle:"एक तारीख", dateModeMulti:"कई दिन", dateFrom:"से", dateTo:"तक", errDateRange:"कृपया शुरू और समाप्ति दोनों तारीखें चुनें।",
+    placeLocation:"गांव/शहर, जिला", placeReq:"अपने आयोजन के बारे में और बताएं...",
+    btnRequestBooking:"बुकिंग का अनुरोध करें",
+    bookFormNote:"यह फ़ॉर्म भेजने पर व्हाट्सएप के ज़रिए एक बुकिंग पूछताछ भेजी जाती है। जब तक हम आपसे संपर्क न करें, यह बुकिंग की पुष्टि नहीं है।",
+    formSuccess:"धन्यवाद! आपकी बुकिंग पूछताछ तैयार है — इसे हमें भेजने के लिए व्हाट्सएप पर जारी रखें।",
+    priceEyebrow:"मूल्य", priceTitle:"कस्टम पैकेज उपलब्ध हैं",
+    priceBody:"हर आयोजन अलग होता है। अपने आयोजन, स्थान और आवश्यकताओं के अनुसार पैकेज के लिए हमसे संपर्क करें।",
+    btnGetQuote:"कोटेशन लें",
+    areasEyebrow:"हम कहां काम करते हैं", areasTitle:"गोपालगंज और सिवान, बिहार में सेवा",
+    areasNote:"क्या आपका आयोजन इन क्षेत्रों के बाहर है? उपलब्धता जानने के लिए हमसे संपर्क करें।",
+    instaTitle:"हमसे जुड़े रहें", instaBody:"इंस्टाग्राम पर हमारा नवीनतम काम और बिहाइंड-द-सीन पल देखें।", btnFollowInsta:"इंस्टाग्राम पर फॉलो करें",
+    testiTitle:"ग्राहक समीक्षाएं जल्द आ रही हैं",
+    contactEyebrow:"संपर्क करें", contactTitle:"आइए आपकी कहानी बनाएं", contactBody:"फ़ोन, व्हाट्सएप, इंस्टाग्राम या बुकिंग फ़ॉर्म — जो भी आपके लिए आसान हो, उससे संपर्क करें।",
+    footerAbout:"पेशेवर वेडिंग फोटोग्राफी और सिनेमैटोग्राफी, गर्व से गोपालगंज और सिवान, बिहार में सेवा दे रहे हैं।",
+    footerLinksTitle:"त्वरित लिंक", footerContactTitle:"संपर्क करें",
+    footerCopy:"© 2026 विकास शर्मा प्रोडक्शन। सर्वाधिकार सुरक्षित।", footerTag:"फोटोग्राफी और वीडियोग्राफी"
+  }
+};
+
+let currentLang = 'en';
+
+function applyLang(lang){
+  currentLang = lang;
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.setAttribute('lang', lang === 'hi' ? 'hi' : 'en');
+  const dict = I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    if(dict[key]!==undefined) el.textContent = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-html');
+    if(dict[key]!==undefined) el.innerHTML = dict[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-placeholder');
+    if(dict[key]!==undefined) el.setAttribute('placeholder', dict[key]);
+  });
+  document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
+    btn.classList.toggle('active', btn.getAttribute('data-lang-btn')===lang);
+  });
+  renderDynamicSections();
+}
+
+document.querySelectorAll('[data-lang-btn]').forEach(btn=>{
+  btn.addEventListener('click', ()=> applyLang(btn.getAttribute('data-lang-btn')));
+});
+
+/* ============================================================
+   RENDER DYNAMIC SECTIONS (services, experience, gallery, video, why)
+   ============================================================ */
+let activeFilter = 'catAll';
+
+function renderDynamicSections(){
+  const dict = I18N[currentLang];
+
+  // Marquee — build one set of keywords then duplicate it so the 50% loop is seamless
+  const marqueeWords = [
+    dict.trust1, dict.trust2, dict.trust3, dict.trust4,
+    dict.svc11t, dict.svc9t, dict.serviceAreasShort
+  ];
+  const marqueeSet = marqueeWords.map(w=>`<span>${w}<b>&#10022;</b></span>`).join('');
+  document.getElementById('marqueeTrack').innerHTML = marqueeSet + marqueeSet;
+
+  // Services
+  const svcGrid = document.getElementById('servicesGrid');
+  svcGrid.innerHTML = SERVICES.map((s,i)=>`
+    <div class="card reveal">
+      <div class="card-num">0${i+1}</div>
+      <div class="card-icon">${s.icon}</div>
+      <h3>${dict[s.t]}</h3>
+      <p>${dict[s.d]}</p>
+    </div>`).join('');
+
+  // Experience
+  const expGrid = document.getElementById('expGrid');
+  expGrid.innerHTML = EXPERIENCE.map(e=>`
+    <div class="exp-card reveal">
+      ${e.icon}
+      <h3>${dict[e.t]}</h3>
+      <p>${dict[e.d]}</p>
+    </div>`).join('');
+
+  // Why choose us
+  const whyList = document.getElementById('whyList');
+  whyList.innerHTML = WHY.map((w,i)=>`
+    <div class="why-item reveal">
+      <div class="why-num">0${i+1}</div>
+      <div><h3>${dict[w]}</h3></div>
+    </div>`).join('');
+
+  // Gallery filters
+  const filterRow = document.getElementById('filterRow');
+  filterRow.innerHTML = GALLERY_CATS.map(c=>`
+    <button class="filter-btn ${c===activeFilter?'active':''}" data-filter="${c}">${dict[c]}</button>`).join('');
+  filterRow.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{ activeFilter = btn.getAttribute('data-filter'); renderGallery(); 
+      filterRow.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active', b===btn));
+    });
+  });
+  renderGallery();
+
+  // Video showcase
+  const videoGrid = document.getElementById('videoGrid');
+  videoGrid.innerHTML = VIDEOS.map(v=>`
+    <div class="video-card reveal">
+      <div class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+      <span class="video-title">${dict[v]}</span>
+    </div>`).join('');
+
+  observeReveals();
+}
+
+function renderGallery(){
+  const dict = I18N[currentLang];
+  const galleryGrid = document.getElementById('galleryGrid');
+  const items = activeFilter==='catAll' ? GALLERY_ITEMS : GALLERY_ITEMS.filter(g=>g.cat===activeFilter);
+  galleryGrid.innerHTML = items.map(g=>`
+    <div class="gallery-item reveal">
+      ${g.icon}
+      <span class="g-label">${dict[g.cat]}</span>
+      <span class="g-cat">${dict[g.cat]}</span>
+    </div>`).join('');
+  observeReveals();
+}
+
+/* ============================================================
+   SCROLL REVEAL OBSERVER
+   ============================================================ */
+let revealObserver;
+function observeReveals(){
+  if(!revealObserver){
+    revealObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){ entry.target.classList.add('in'); revealObserver.unobserve(entry.target); }
+      });
+    }, {threshold:.15});
+  }
+  document.querySelectorAll('.reveal:not(.in), .slide-left:not(.in), .slide-right:not(.in)').forEach(el=> revealObserver.observe(el));
+}
+
+/* ============================================================
+   NAV: scroll state, mobile menu, back-to-top
+   ============================================================ */
+const header = document.getElementById('siteHeader');
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', ()=>{
+  header.classList.toggle('scrolled', window.scrollY > 40);
+  backTop.classList.toggle('show', window.scrollY > 600);
+}, {passive:true});
+
+const navToggle = document.getElementById('navToggle');
+const mobilePanel = document.getElementById('mobilePanel');
+const scrim = document.getElementById('scrim');
+function closeMenu(){ mobilePanel.classList.remove('open'); scrim.classList.remove('open'); }
+navToggle.addEventListener('click', ()=>{ mobilePanel.classList.add('open'); scrim.classList.add('open'); });
+scrim.addEventListener('click', closeMenu);
+mobilePanel.querySelectorAll('a').forEach(a=> a.addEventListener('click', closeMenu));
+backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ============================================================
+   BOOKING FORM — validation + WhatsApp message generation
+   ============================================================ */
+const bookingForm = document.getElementById('bookingForm');
+const formStatus = document.getElementById('formStatus');
+const dateSingleInput = document.getElementById('dateSingle');
+const dateMultiWrap = document.getElementById('dateMultiWrap');
+const dateStartInput = document.getElementById('dateStart');
+const dateEndInput = document.getElementById('dateEnd');
+let dateMode = 'single';
+
+document.querySelectorAll('.date-mode-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    dateMode = btn.getAttribute('data-mode');
+    document.querySelectorAll('.date-mode-btn').forEach(b=> b.classList.toggle('active', b===btn));
+    if(dateMode === 'single'){
+      dateSingleInput.style.display = '';
+      dateMultiWrap.style.display = 'none';
+    } else {
+      dateSingleInput.style.display = 'none';
+      dateMultiWrap.style.display = 'flex';
+    }
+    setFieldError('f-date', false);
+  });
+});
+
+function setFieldError(id, hasError){
+  const field = document.getElementById(id);
+  field.classList.toggle('error', hasError);
+}
+
+bookingForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(bookingForm);
+  const name = (data.get('name')||'').trim();
+  const phone = (data.get('phone')||'').trim();
+  const event = data.get('event')||'';
+  const location = (data.get('location')||'').trim();
+  const requirements = (data.get('requirements')||'').trim();
+  const dict = I18N[currentLang];
+
+  let valid = true;
+  const phoneOk = /^[+]?[\d\s-]{7,15}$/.test(phone);
+
+  setFieldError('f-name', !name); if(!name) valid=false;
+  setFieldError('f-phone', !phoneOk); if(!phoneOk) valid=false;
+  setFieldError('f-event', !event); if(!event) valid=false;
+  setFieldError('f-location', !location); if(!location) valid=false;
+
+  let dateText = '';
+  const dateErrMsgEl = document.querySelector('#f-date .err-msg');
+  if(dateMode === 'single'){
+    const date = dateSingleInput.value;
+    dateErrMsgEl.textContent = dict.errDate;
+    setFieldError('f-date', !date); if(!date) valid=false;
+    dateText = date;
+  } else {
+    const start = dateStartInput.value;
+    const end = dateEndInput.value;
+    dateErrMsgEl.textContent = dict.errDateRange;
+    const dateRangeInvalid = !start || !end;
+    setFieldError('f-date', dateRangeInvalid); if(dateRangeInvalid) valid=false;
+    dateText = start && end ? `${start} ${dict.dateTo.toLowerCase()} ${end}` : '';
+  }
+
+  if(!valid){ formStatus.classList.remove('show'); return; }
+
+  const eventLabelMap = {
+    Wedding: dict.optWedding, 'Pre-Wedding': dict.optPreWedding, Engagement: dict.optEngagement,
+    Birthday: dict.optBirthday, Reception: dict.optReception, 'Short Film': dict.optFilm,
+    'Music Video': dict.optMusicVideo, Other: dict.optOther
+  };
+  const eventLabel = eventLabelMap[event] || event;
+
+  const messageLines = [
+    `Hello ${CONFIG.businessName},`,
+    `I would like to enquire about your photography/videography services.`,
+    ``,
+    `Name: ${name}`,
+    `Phone: ${phone}`,
+    `Event: ${eventLabel}`,
+    `Date: ${dateText}`,
+    `Location: ${location}`,
+    `Requirements: ${requirements || '-'}`
+  ];
+  const waMessage = encodeURIComponent(messageLines.join('\n'));
+  const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${waMessage}`;
+
+  formStatus.textContent = dict.formSuccess;
+  formStatus.classList.add('show');
+
+  window.open(waUrl, '_blank');
+});
+
+/* ============================================================
+   INIT
+   ============================================================ */
+function setViewportHeightVar(){
+  document.documentElement.style.setProperty('--vh', (window.innerHeight * 0.01) + 'px');
+}
+setViewportHeightVar();
+window.addEventListener('resize', setViewportHeightVar);
+window.addEventListener('orientationchange', setViewportHeightVar);
+
+window.addEventListener('load', ()=>{
+  setTimeout(()=>{ document.getElementById('iris').classList.add('closed'); }, 300);
+});
+applyLang('en');
+observeReveals();
+</script>
+</body>
+</html>
